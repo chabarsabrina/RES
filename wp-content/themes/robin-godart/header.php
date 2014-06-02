@@ -15,7 +15,7 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	
 	<!-- Meta -->
-	<title>Portfolio Godart Robin</title>
+	<title></title>
 	<link rel="icon" href="<?php bloginfo( 'template_directory' ); ?>/img/favicon.png" />
 	<meta name="description" content="" />
 	
@@ -42,7 +42,7 @@
 </head>
 
 <header>
-	
+
 </header>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> >
