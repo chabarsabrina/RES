@@ -26,6 +26,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Marck+Script' rel='stylesheet' type='text/css'>
 	
 	
+	
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -42,7 +43,14 @@
 </head>
 
 <header>
-
+	<nav id="nav-header">
+		
+			<?php wp_nav_menu(array('theme_location' => 'menu_header', 'container' =>false)) ?>
+		
+	</nav>
 </header>
 
 <body <?php body_class(); ?> >
+
+
+	
