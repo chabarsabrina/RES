@@ -61,6 +61,12 @@ function getTinyUrl($url) {
 // Hide AdminBar
 add_filter('show_admin_bar', '__return_false');
 
+
+// woo commerce
+
+//remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10 );
+//add_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 100 );
+
 /*////////////////////////// FIN Robin Godart ////////////////////////////*/
 
 

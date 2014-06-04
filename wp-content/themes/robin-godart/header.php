@@ -23,9 +23,7 @@
 	<link rel="stylesheet" href="<?php bloginfo( 'template_directory' ); ?>/library/css/bootstrap.min.css" type="text/css" media="screen" title="no title" charset="utf-8" />
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.2/css/font-awesome.min.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Lato:900,700' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Marck+Script' rel='stylesheet' type='text/css'>
-	
-	
+	<link href='http://fonts.googleapis.com/css?family=Marck+Script' rel='stylesheet' type='text/css'>	
 	
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -35,6 +33,7 @@
     <![endif]-->
 	<?php wp_head(); ?>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<link rel='stylesheet/less' id='style-less-css'  href='<?php echo get_stylesheet_directory_uri(); ?>/library/styles/woocommerce/woocommerce.less' type='text/css' media='screen' />
 
 	
 </head>
