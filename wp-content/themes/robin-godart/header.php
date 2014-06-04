@@ -35,18 +35,36 @@
     <![endif]-->
 	<?php wp_head(); ?>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	
-	<!-- Styles -->
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo( 'template_directory' ); ?>/library/css/style.less" />
-	<script type='text/javascript' src="<?php bloginfo( 'template_directory' ); ?>/library/js/less-1.7.0.min.js"></script>
+
 	
 </head>
 
 <header>
+	<?php
+	if(get_field('slides', 'option')): ?>
+		<div id="main_carousel" class="carousel slide carousel-fade" data-ride="carousel">
+			
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner">
+				<?php $k=1; while(has_sub_field('slides', 'option')): ?>
+					<div class="item <?php if($k==1){echo "active";}?>" style="background: url('<?php the_sub_field('image'); ?>') no-repeat center top">
+						
+					</div><!-- .item -->
+				<?php $k++; endwhile; ?>
+			</div>
+
+			<!-- Controls -->
+			<a class="prev btn_control" href="#main_carousel" data-slide="prev">
+				<i class="fa fa-chevron-left"></i>
+			</a>
+			<a class="next btn_control" href="#main_carousel" data-slide="next">
+				<i class="fa fa-chevron-right"></i>
+			</a>
+		</div>
+	<?php
+	endif; ?>
 	<nav id="nav-header">
-		
-			<?php wp_nav_menu(array('theme_location' => 'menu_header', 'container' =>false)) ?>
-		
+		<?php wp_nav_menu(array('theme_location' => 'menu_header', 'container' =>false, 'walker' => new wp_bootstrap_navwalker())) ?>
 	</nav>
 </header>
 
