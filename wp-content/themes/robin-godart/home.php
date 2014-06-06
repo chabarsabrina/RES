@@ -4,22 +4,19 @@
 	<div class="container last_product">
 		<div class="row">
 			
-			<!--======= Sidebar =====-->
-			<?php get_sidebar(); ?>
-			
-			<div class="col-md-12">
-				<?php include("fil_ariane.php"); ?>
-				<div class="soins">
-					<h1>Les créateurs</h1>
+			<div class="col-md-12 last_products">
+				<div class="product">
+					<h1>Derniers produits</h1>
 					<?php
-					$my_query = new WP_Query(array('post_type'=> 'products', 'orderby' => 'title', 'posts_per_page' => '3'));
+					$my_query = new WP_Query(array('post_type'=> 'product', 'orderby' => 'title', 'posts_per_page' => '3'));
 					if ($my_query->have_posts()):
 						while ($my_query->have_posts()) : $my_query->the_post(); ?>
-							<article class="col-md-12 col-sm-6">
-								<div class="content row">
+							<article class="col-md-4 col-sm-4 single_product">
+								<div class="content">
 									<div class="description">
-										<h3><?php the_title(); ?></h3>
-										<p><?php the_content(); ?></p>
+										<?php if (has_post_thumbnail()){ the_post_thumbnail('thumbnail'); } ?>
+										<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+										<p><?php the_excerpt(); ?></p>
 									</div>
 								</div>
 							</article>
@@ -35,3 +32,4 @@
 </div>
 
 <?php get_footer(); ?>
+
