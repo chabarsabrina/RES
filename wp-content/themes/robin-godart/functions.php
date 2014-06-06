@@ -62,6 +62,44 @@ function getTinyUrl($url) {
 add_filter('show_admin_bar', '__return_false');
 
 
+function codex_custom_init() {
+
+	// liste des créateurs
+	$labels = array(
+		'name' => 'Liste des créateurs',
+		'singular_name' => 'Créateur',
+		'add_new' => 'Ajouter un créateur',
+		'add_new_item' => 'Ajouter un nouveau créateur',
+		'edit_item' => 'Editer un créateur',
+		'new_item' => 'Nouveau créateur',
+		'all_items' => 'Tous les créateurs',
+		'view_item' => 'Voir créateur',
+		'search_items' => 'Chercher un créateur',
+		'not_found' =>  'Aucun créateur trouvé',
+		'not_found_in_trash' => 'Aucun créateur trouvé dans la corbeille', 
+		'parent_item_colon' => '',
+		'menu_name' => 'Liste des créateurs'
+	);
+	$args = array(
+		'labels' => $labels,
+		'public' => true,
+		'publicly_queryable' => true,
+		'show_ui' => true, 
+		'show_in_menu' => true, 
+		'query_var' => true,
+		'rewrite' => array( 'slug' => 'createurs' ),
+		'capability_type' => 'post',
+		'has_archive' => true, 
+		'hierarchical' => false,
+		'menu_position' => null,
+		'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt')
+	); 
+	register_post_type( 'createur', $args );
+	
+}
+add_action('init', 'codex_custom_init');
+
+
 // woo commerce
 
 //remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10 );
